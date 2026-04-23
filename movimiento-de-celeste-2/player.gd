@@ -86,7 +86,4 @@ func _physics_process(delta):
 		dash_direction = input_dir.normalized()
 		velocity = dash_direction * dash_speed
 
-	if direction != 0:
-		$Sprite2D.flip_h = direction < 0
-
 	move_and_slide()
