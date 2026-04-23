@@ -6,12 +6,16 @@
 script = ExtResource("1_nqr5d")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(529, 7)
+position = Vector2(694, 5)
 amount = 2000
-lifetime = 14.69
+lifetime = 3.0
 speed_scale = 0.2
+local_coords = true
+draw_order = 1
 emission_shape = 3
-emission_rect_extents = Vector2(1000, 1)
-gravity = Vector2(-600, 980)
-scale_amount_min = 0.2
-scale_amount_max = 10.51
+emission_rect_extents = Vector2(700, 150)
+gravity = Vector2(-200, 200)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+scale_amount_min = 0.4
+scale_amount_max = 1.5
