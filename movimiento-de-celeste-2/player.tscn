@@ -1,7 +1,7 @@
 [gd_scene load_steps=46 format=3 uid="uid://xuiu1i4kumpo"]
 
 [ext_resource type="Script" uid="uid://1aatvycgs3pm" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://7mqo2qkea2tc" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Wall Jump (32x32).png" id="2_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://dcn83kuqaj47q" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Wall Jump 2 (32x32).png" id="2_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://dih7n6cko17p3" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Double Jump (32x32).png" id="3_dw050"]
 [ext_resource type="Texture2D" uid="uid://bgwekspisbolc" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Fall (32x32).png" id="4_b26j0"]
 [ext_resource type="Texture2D" uid="uid://dodwlq3dy1t6m" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Idle (32x32).png" id="5_n7ghd"]
@@ -9,25 +9,25 @@
 [ext_resource type="Texture2D" uid="uid://baxk25a3if0k7" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Run (32x32).png" id="7_ivps1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(25, 27)
+size = Vector2(23.5, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
 atlas = ExtResource("2_1jxqw")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
 atlas = ExtResource("2_1jxqw")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_606se"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_1jxqw")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1c27"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
 atlas = ExtResource("2_1jxqw")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
 atlas = ExtResource("2_1jxqw")
 region = Rect2(128, 0, 32, 32)
 
@@ -159,19 +159,19 @@ region = Rect2(352, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_urp6f")
+"texture": SubResource("AtlasTexture_dw050")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bwjto")
+"texture": SubResource("AtlasTexture_b26j0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_606se")
+"texture": SubResource("AtlasTexture_n7ghd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u1c27")
+"texture": SubResource("AtlasTexture_nvl01")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_op7ga")
+"texture": SubResource("AtlasTexture_ivps1")
 }],
 "loop": true,
 "name": &"dash",
@@ -197,7 +197,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_7lmhl")
 }],
 "loop": true,
-"name": &"doble jump",
+"name": &"double jump",
 "speed": 12.0
 }, {
 "frames": [{
@@ -302,7 +302,7 @@ script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(251, 143.5)
+position = Vector2(250.25, 142.5)
 shape = SubResource("RectangleShape2D_hqtel")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -310,5 +310,10 @@ z_index = 1
 position = Vector2(250, 140)
 sprite_frames = SubResource("SpriteFrames_ieltc")
 animation = &"run"
-frame = 5
-frame_progress = 0.45616862
+frame_progress = 0.15453531
+
+[node name="DashParticles" type="CPUParticles2D" parent="."]
+
+[node name="JumpParticles" type="CPUParticles2D" parent="."]
+
+[node name="LandParticles" type="CPUParticles2D" parent="."]

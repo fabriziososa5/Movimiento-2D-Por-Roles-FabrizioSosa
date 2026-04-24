@@ -24,10 +24,12 @@ var wall_jump_push = 500
 
 func _physics_process(delta):
 
-	
-	update_animations()
-
 	var direction = Input.get_axis("left", "right")
+
+	if direction != 0:
+		animated_sprite.flip_h = direction < 0
+
+	update_animations()
 
 	if dash_timer > 0:
 		dash_timer -= delta
@@ -71,36 +73,38 @@ func _physics_process(delta):
 		can_dash = false
 		dash_timer = dash_time
 
-		var input_dir = Vector2(
-			Input.get_axis("left", "right"),
-			Input.get_axis("up", "down")
-		)
+		var input_dir = Input.get_vector("left", "right", "up", "down")
 
 		if input_dir == Vector2.ZERO:
-			input_dir = Vector2.RIGHT if velocity.x >= 0 else Vector2.LEFT
+			input_dir = Vector2.LEFT if animated_sprite.flip_h else Vector2.RIGHT
 
 		dash_direction = input_dir.normalized()
 		velocity = dash_direction * dash_speed
+
+		if dash_direction.x != 0:
+			animated_sprite.flip_h = dash_direction.x > 0
+
 
 	move_and_slide()
 
 
 func update_animations():
-	
+
 	if dash_timer > 0:
 		animated_sprite.play("dash")
 		return
+
 	if not is_on_floor():
 		if velocity.y < 0:
 			if jumps_left < max_jumps - 1:
-				animated_sprite.play("double_jump")
+				animated_sprite.play("double jump")
 			else:
 				animated_sprite.play("jump")
 		else:
 			animated_sprite.play("fall")
 		return
+
+	if velocity.x != 0:
+		animated_sprite.play("run")
 	else:
-		if velocity.x != 0:
-			animated_sprite.play("run")
-		else:
-			animated_sprite.play("idle")
+		animated_sprite.play("idle")
