@@ -8,13 +8,15 @@
 [node name="Main" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576.5, 340.5)
-scale = Vector2(0.3002604, 0.31527776)
+position = Vector2(238, 114.5)
+scale = Vector2(0.12864584, 0.10879631)
 texture = ExtResource("1_r0du0")
 
 [node name="Player" parent="." instance=ExtResource("1_uu6xs")]
+position = Vector2(-222, -5)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(0, 2)
 
 [node name="Snow" parent="." instance=ExtResource("4_cm0pq")]
 position = Vector2(-5, -1)

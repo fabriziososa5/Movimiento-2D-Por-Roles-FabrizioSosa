@@ -1,35 +1,37 @@
 extends CharacterBody2D
 
-var speed = 500
-var acceleration = 1500
-var friction = 2500
+@onready var animated_sprite = $AnimatedSprite2D
 
-var gravity = 2000
+var speed = 200
+var acceleration = 700
+var friction = 1000
 
-var jump_force = -800
+var gravity = 1500
+
+var jump_force = -500
 var max_jumps = 2
 var jumps_left = 2
 
-var dash_speed = 700
+var dash_speed = 500
 var dash_time = 0.15
 var dash_timer = 0
 var can_dash = true
 var dash_direction = Vector2.ZERO
 
-
 var wall_slide_speed = 150
-var wall_jump_force = -800
+var wall_jump_force = -500
 var wall_jump_push = 500
 
 func _physics_process(delta):
 
-	var direction = Input.get_axis("left", "right")
+	
+	update_animations()
 
+	var direction = Input.get_axis("left", "right")
 
 	if dash_timer > 0:
 		dash_timer -= delta
 		velocity = dash_direction * dash_speed
-
 	else:
 		if not is_on_floor():
 			if velocity.y > 0:
@@ -40,11 +42,9 @@ func _physics_process(delta):
 			jumps_left = max_jumps
 			can_dash = true
 
-
 		if not is_on_floor() and is_on_wall() and direction != 0:
 			if velocity.y > wall_slide_speed:
 				velocity.y = wall_slide_speed
-
 
 		if direction != 0:
 			if is_on_floor():
@@ -54,11 +54,9 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, friction * delta)
 
-
 	if Input.is_action_just_pressed("jump") and jumps_left > 0:
 		velocity.y = jump_force
 		jumps_left -= 1
-
 
 	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor():
 		velocity.y = wall_jump_force
@@ -66,10 +64,8 @@ func _physics_process(delta):
 		if direction != 0:
 			velocity.x = -direction * wall_jump_push
 
-
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.5
-
 
 	if Input.is_action_just_pressed("dash") and can_dash:
 		can_dash = false
@@ -87,3 +83,24 @@ func _physics_process(delta):
 		velocity = dash_direction * dash_speed
 
 	move_and_slide()
+
+
+func update_animations():
+	
+	if dash_timer > 0:
+		animated_sprite.play("dash")
+		return
+	if not is_on_floor():
+		if velocity.y < 0:
+			if jumps_left < max_jumps - 1:
+				animated_sprite.play("double_jump")
+			else:
+				animated_sprite.play("jump")
+		else:
+			animated_sprite.play("fall")
+		return
+	else:
+		if velocity.x != 0:
+			animated_sprite.play("run")
+		else:
+			animated_sprite.play("idle")

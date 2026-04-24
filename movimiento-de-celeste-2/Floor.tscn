@@ -1,145 +1,262 @@
-[gd_scene load_steps=7 format=3 uid="uid://c371cph12kxe8"]
+[gd_scene load_steps=29 format=4 uid="uid://c371cph12kxe8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_spmh5"]
-size = Vector2(1153.5, 50)
+[ext_resource type="Texture2D" uid="uid://b44d42tiy1jan" path="res://assets/Snow/Rocky Roads/Tilesets/tileset_snow.png" id="1_wm4b4"]
+[ext_resource type="Texture2D" uid="uid://by04sfauch61x" path="res://assets/Snow/Rocky Roads/Deco/clouds.png" id="2_0gdli"]
+[ext_resource type="Texture2D" uid="uid://cxlvmb1r3s7if" path="res://assets/Snow/Rocky Roads/Deco/tree.png" id="3_f2mh0"]
+[ext_resource type="Texture2D" uid="uid://b78vop3i01e13" path="res://assets/Snow/Rocky Roads/Deco/rock.png" id="3_gq7au"]
+[ext_resource type="Texture2D" uid="uid://dscsn3bt1l51u" path="res://assets/Snow/Rocky Roads/Deco/tree_b.png" id="4_f2mh0"]
+[ext_resource type="Texture2D" uid="uid://cmod7pxbd2v40" path="res://assets/Snow/Rocky Roads/Deco/tree_c.png" id="5_bdff4"]
+[ext_resource type="Texture2D" uid="uid://be3ichetqrtdc" path="res://assets/Snow/Rocky Roads/Deco/tree_trunk.png" id="6_mb0cl"]
+[ext_resource type="Texture2D" uid="uid://1cgnvhxeaqh4" path="res://assets/Snow/Rocky Roads/Deco/water_a_8frames.png" id="7_keya6"]
+[ext_resource type="Texture2D" uid="uid://btih814gfj425" path="res://assets/Snow/Rocky Roads/Deco/bush.png" id="9_bdff4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wm4b4"]
+texture = ExtResource("1_wm4b4")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+9:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qbq3j"]
+sources/0 = SubResource("TileSetAtlasSource_wm4b4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm4b4"]
-size = Vector2(126, 156.25)
+size = Vector2(480, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbq3j"]
-size = Vector2(84, 86.5)
+size = Vector2(4, 224.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tt66"]
+size = Vector2(64, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ragr8"]
-size = Vector2(127, 116)
+size = Vector2(485, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr8py"]
-size = Vector2(182.5, 33.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrkb7"]
+size = Vector2(48, 63)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_spmh5"]
-a = Vector2(1152, 0)
-b = Vector2(-1, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gdli"]
+size = Vector2(79, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq7au"]
+size = Vector2(80, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ragr8"]
+texture = ExtResource("1_wm4b4")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+9:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7w5v"]
+texture = ExtResource("2_0gdli")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mb0cl"]
+texture = ExtResource("3_f2mh0")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxi47"]
+texture = ExtResource("3_gq7au")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3obb"]
+texture = ExtResource("4_f2mh0")
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dn82e"]
+texture = ExtResource("5_bdff4")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2ahn"]
+texture = ExtResource("6_mb0cl")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3vtn"]
+texture = ExtResource("7_keya6")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_keya6"]
+texture = ExtResource("9_bdff4")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sr8py"]
+sources/0 = SubResource("TileSetAtlasSource_ragr8")
+sources/1 = SubResource("TileSetAtlasSource_b7w5v")
+sources/2 = SubResource("TileSetAtlasSource_xxi47")
+sources/3 = SubResource("TileSetAtlasSource_j3obb")
+sources/4 = SubResource("TileSetAtlasSource_dn82e")
+sources/5 = SubResource("TileSetAtlasSource_e2ahn")
+sources/6 = SubResource("TileSetAtlasSource_q3vtn")
+sources/9 = SubResource("TileSetAtlasSource_keya6")
+sources/10 = SubResource("TileSetAtlasSource_mb0cl")
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAABAAAAABAAQAAAABABAAAAACAAQAAAACABAAAAACAAQAAAADABAAAAACAAQAAAAEABAAAAACAAQAAAAFABAAAAACAAQAAAAGABAAAAACAAQAAAAHABAAAAACAAQAAAAIABAAAAACAAQAAAAJABAAAAACAAQAAAAKABAAAAACAAQAAAALABAAAAACAAQAAAAMABAAAAACAAQAAAANABAAAAACAAQAAAAOABAAAAACAAQAAAAPABAAAAACAAQAAAAQABAAAAACAAQAAAARABAAAAACAAQAAAASABAAAAACAAQAAAATABAAAAACAAQAAAAUABAAAAACAAQAAAAVABAAAAACAAQAAAAWABAAAAACAAQAAAAXABAAAAACAAQAAAAYABAAAAACAAQAAAAZABAAAAACAAQAAAAaABAAAAACAAQAAAAbABAAAAACAAQAAAAcABAAAAACAAQAAAAdABAAAAAFAAQAAAAdAA8AAAAFAAMAAAAdAA4AAAAFAAIAAAAAAA8AAAABAAMAAAAAAA4AAAABAAIAAAABAA4AAAAIAAMAAAACAA4AAAAIAAMAAAADAA4AAAAIAAMAAAAEAA4AAAAIAAMAAAAFAA4AAAAIAAMAAAAGAA4AAAAIAAMAAAAHAA4AAAAIAAMAAAAIAA4AAAAIAAMAAAAJAA4AAAAIAAMAAAAKAA4AAAAIAAMAAAALAA4AAAAIAAMAAAAMAA4AAAAIAAMAAAANAA4AAAAIAAMAAAAOAA4AAAAIAAMAAAAPAA4AAAAIAAMAAAAQAA4AAAAIAAMAAAARAA4AAAAIAAMAAAASAA4AAAAIAAMAAAATAA4AAAAIAAMAAAAUAA4AAAAIAAMAAAAVAA4AAAAIAAMAAAAWAA4AAAAIAAMAAAAXAA4AAAAIAAMAAAAYAA4AAAAIAAMAAAAZAA4AAAAIAAMAAAAaAA4AAAAIAAMAAAAbAA4AAAAIAAMAAAAcAA4AAAAIAAMAAAABAA8AAAADAAMAAAACAA8AAAADAAMAAAADAA8AAAADAAMAAAAEAA8AAAADAAMAAAAFAA8AAAADAAMAAAAGAA8AAAADAAMAAAAHAA8AAAADAAMAAAAIAA8AAAADAAMAAAAJAA8AAAADAAMAAAAKAA8AAAADAAMAAAALAA8AAAADAAMAAAAMAA8AAAADAAMAAAANAA8AAAADAAMAAAAOAA8AAAADAAMAAAAPAA8AAAADAAMAAAAQAA8AAAADAAMAAAARAA8AAAADAAMAAAASAA8AAAADAAMAAAATAA8AAAADAAMAAAAUAA8AAAADAAMAAAAVAA8AAAADAAMAAAAWAA8AAAADAAMAAAAXAA8AAAADAAMAAAAYAA8AAAADAAMAAAAZAA8AAAADAAMAAAAaAA8AAAADAAMAAAAbAA8AAAADAAMAAAAcAA8AAAADAAMAAAAdAA0AAAAJAAIAAAAeAA0AAAABAAMAAAAeAAwAAAABAAMAAAAeAAsAAAABAAMAAAAeAAoAAAABAAMAAAAeAAkAAAABAAMAAAAeAAgAAAABAAMAAAAeAAcAAAABAAMAAAAeAAYAAAABAAMAAAAeAAUAAAABAAMAAAAeAAQAAAABAAMAAAAeAAMAAAABAAMAAAAeAAIAAAABAAMAAAAeAAEAAAABAAMAAAAeAAAAAAABAAMAAAAeAP//AAACAAQAAAAdAP//AAACAAQAAAAcAP//AAACAAQAAAAbAP//AAACAAQAAAAaAP//AAACAAQAAAAZAP//AAACAAQAAAAYAP//AAACAAQAAAAXAP//AAACAAQAAAAWAP//AAACAAQAAAAVAP//AAACAAQAAAAUAP//AAACAAQAAAATAP//AAACAAQAAAASAP//AAACAAQAAAARAP//AAACAAQAAAAQAP//AAACAAQAAAAPAP//AAACAAQAAAAOAP//AAACAAQAAAANAP//AAACAAQAAAAMAP//AAACAAQAAAALAP//AAACAAQAAAAKAP//AAACAAQAAAAJAP//AAACAAQAAAAIAP//AAACAAQAAAAHAP//AAACAAQAAAAGAP//AAACAAQAAAAFAP//AAACAAQAAAAEAP//AAACAAQAAAADAP//AAACAAQAAAACAP//AAACAAQAAAABAP//AAACAAQAAAAAAP//AAACAAQAAAD/////AAACAAQAAAD//wAAAAAFAAMAAAD//wEAAAAFAAMAAAD//wIAAAAFAAMAAAD//wMAAAAFAAMAAAD//wQAAAAFAAMAAAD//wUAAAAFAAMAAAD//wYAAAAFAAMAAAD//wcAAAAFAAMAAAD//wgAAAAFAAMAAAD//wkAAAAFAAMAAAD//woAAAAFAAMAAAD//wsAAAAFAAMAAAD//wwAAAAFAAMAAAD//w0AAAAFAAMAAAD//w4AAAAFAAMAAAA=")
+tile_set = SubResource("TileSet_qbq3j")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(577, 644)
-shape = SubResource("RectangleShape2D_spmh5")
+position = Vector2(240, 247.5)
+shape = SubResource("RectangleShape2D_wm4b4")
 
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
-offset_left = -579.0
-offset_top = -25.0
-offset_right = 576.0
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(42, 71)
 
-[node name="ColorRect2" type="ColorRect" parent="CollisionShape2D"]
-offset_left = -577.0
-offset_right = 577.0
-offset_bottom = 40.0
-color = Color(0.5921569, 0.40784314, 0.24705882, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-44, 41.75)
+shape = SubResource("RectangleShape2D_qbq3j")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(42, 71)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(437, 42)
+shape = SubResource("RectangleShape2D_qbq3j")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(62, 541)
-shape = SubResource("RectangleShape2D_wm4b4")
-
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D2"]
-offset_left = -63.0
-offset_top = -78.0
-offset_right = 66.0
-offset_bottom = -53.0
-
-[node name="ColorRect2" type="ColorRect" parent="CollisionShape2D2"]
-offset_left = -62.0
-offset_top = -53.0
-offset_right = 64.0
-offset_bottom = 85.0
-color = Color(0.5921569, 0.40784314, 0.24705882, 1)
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
-position = Vector2(1091, 540)
-shape = SubResource("RectangleShape2D_wm4b4")
-
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D6"]
-offset_left = -63.0
-offset_top = -78.0
-offset_right = 66.0
-offset_bottom = -53.0
-
-[node name="ColorRect2" type="ColorRect" parent="CollisionShape2D6"]
-offset_left = -62.0
-offset_top = -53.0
-offset_right = 61.0
-offset_bottom = 78.0
-color = Color(0.5921569, 0.40784314, 0.24705882, 1)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(166, 573)
-shape = SubResource("RectangleShape2D_qbq3j")
-
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D3"]
-offset_left = -44.0
-offset_top = -44.0
-offset_right = 44.0
-offset_bottom = -19.0
-
-[node name="ColorRect2" type="ColorRect" parent="CollisionShape2D3"]
-offset_left = -46.0
-offset_top = -19.0
-offset_right = 44.0
-offset_bottom = 55.0
-color = Color(0.5921569, 0.40784314, 0.24705882, 1)
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
-position = Vector2(986, 575)
-shape = SubResource("RectangleShape2D_qbq3j")
-
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D7"]
-offset_left = -45.0
-offset_top = -44.0
-offset_right = 44.0
-offset_bottom = -19.0
-
-[node name="ColorRect2" type="ColorRect" parent="CollisionShape2D7"]
-offset_left = -46.0
-offset_top = -19.0
-offset_right = 44.0
-offset_bottom = 55.0
-color = Color(0.5921569, 0.40784314, 0.24705882, 1)
+position = Vector2(400, 152)
+shape = SubResource("RectangleShape2D_3tt66")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(579, 562)
+position = Vector2(304, 136)
+shape = SubResource("RectangleShape2D_3tt66")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(238.5, -2)
 shape = SubResource("RectangleShape2D_ragr8")
 
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D4"]
-offset_left = -63.0
-offset_top = -60.0
-offset_right = 66.0
-offset_bottom = -35.0
-
-[node name="ColorRect2" type="ColorRect" parent="CollisionShape2D4"]
-offset_left = -63.0
-offset_top = -35.0
-offset_right = 65.0
-offset_bottom = 61.0
-color = Color(0.5921569, 0.40784314, 0.24705882, 1)
-
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
-position = Vector2(819, 426)
-shape = SubResource("RectangleShape2D_sr8py")
+position = Vector2(200, 192.5)
+shape = SubResource("RectangleShape2D_yrkb7")
 
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D5"]
-offset_left = -91.0
-offset_top = -19.0
-offset_right = 95.0
-offset_bottom = 18.0
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(199.5, 200)
+shape = SubResource("RectangleShape2D_0gdli")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
-shape = SubResource("SegmentShape2D_spmh5")
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(40, 192)
+shape = SubResource("RectangleShape2D_gq7au")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 922)
-rotation = -1.5707964
-shape = SubResource("SegmentShape2D_spmh5")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
-position = Vector2(1154, 915)
-rotation = -1.5707964
-shape = SubResource("SegmentShape2D_spmh5")
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAXAAoAAAAHAAUAAAAYAAoAAAAIAAUAAAAZAAoAAAAJAAUAAAAaAAoAAAAKAAUAAAAXAAkAAAAHAAMAAAAYAAkAAAAIAAMAAAAaAAkAAAAJAAMAAAAZAAkAAAAIAAMAAAAaAAgAAAAJAAIAAAAAAA0AAAABAAQAAAABAA0AAAACAAQAAAACAA0AAAADAAQAAAADAA0AAAAEAAQAAAAEAA0AAAAFAAQAAAAEAAwAAAAFAAMAAAAEAAsAAAAFAAMAAAADAAsAAAAEAAIAAAADAAoAAAAEAAEAAAACAAoAAAADAAEAAAABAAoAAAACAAEAAAABAAsAAAACAAIAAAAAAAsAAAABAAMAAAAAAAwAAAABAAMAAAACAAsAAAADAAIAAAACAAwAAAADAAMAAAADAAwAAAAEAAMAAAABAAwAAAACAAMAAAABAAkAAwABAAMAAAADAAkAAAAEAAAAAAACAAkAAwACAAMAAAAKAA0AAAABAAQAAAALAA0AAAACAAQAAAAMAA0AAAACAAQAAAANAA0AAAACAAQAAAAOAA0AAAAFAAQAAAAOAAwAAAAFAAMAAAAOAAsAAAAFAAIAAAANAAsAAAAEAAIAAAANAAoAAAAEAAEAAAAMAAoAAAADAAEAAAALAAoAAAACAAEAAAALAAsAAAACAAIAAAAKAAsAAAABAAIAAAAKAAwAAAABAAMAAAAMAAsAAAADAAIAAAAMAAwAAAADAAMAAAANAAwAAAAEAAMAAAALAAwAAAACAAMAAAALAAkAAAACAAAAAAANAAkABQAAAAAAAAAMAAkAAAADAAAAAAAAAAoAAAACAAEAAAAEAAoAAAAEAAEAAAARAAgAAAAHAAMAAAASAAgAAAAIAAMAAAATAAgAAAAIAAMAAAARAAkAAAAHAAUAAAASAAkAAAAIAAUAAAATAAkAAAAJAAUAAAAUAAkAAAAKAAUAAAAUAAgAAAAJAAMAAAAAAAkAAwAAAAMAAAAFAA0ACQAAAAAAAAAPAA0ACQAAAAAAAAASAAUAAwAAAAEAAAASAAYAAwAAAAIAAAASAAcAAwAAAAMAAAATAAUAAwABAAEAAAATAAYAAwABAAIAAAATAAcAAwABAAMAAAAUAAUAAwACAAEAAAAUAAYAAwACAAIAAAAUAAcAAwACAAMAAAAEAAkABQAAAAAAAAAQAA0ACQABAAAAAAAGAA0ACQABAAAAAAAAAAcAAwAAAAEAAAAAAAgAAwAAAAIAAAABAAcAAwABAAEAAAABAAgAAwABAAIAAAACAAcAAwACAAEAAAACAAgAAwACAAIAAAA=")
+tile_set = SubResource("TileSet_sr8py")
