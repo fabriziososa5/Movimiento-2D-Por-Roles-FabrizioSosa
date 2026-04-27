@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://xuiu1i4kumpo"]
+[gd_scene load_steps=56 format=3 uid="uid://xuiu1i4kumpo"]
 
 [ext_resource type="Script" uid="uid://1aatvycgs3pm" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dcn83kuqaj47q" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Wall Jump 2 (32x32).png" id="2_1jxqw"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dodwlq3dy1t6m" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Idle (32x32).png" id="5_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://bvf6gfnmlm0y8" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Jump (32x32).png" id="6_nvl01"]
 [ext_resource type="Texture2D" uid="uid://baxk25a3if0k7" path="res://assets/Pixel Aventura/Free/Main Characters/Pink Man/Run (32x32).png" id="7_ivps1"]
+[ext_resource type="Texture2D" uid="uid://ccannn2d7bgq8" path="res://assets/Pixel Aventura/Free/Other/Dust Particle.png" id="8_dw050"]
+[ext_resource type="Texture2D" uid="uid://bmt8iso7b16ko" path="res://assets/Rocky Roads/Rocky Roads/FX/cannon_fire_smoke.png" id="9_b26j0"]
+[ext_resource type="Texture2D" uid="uid://gacpsrrlontj" path="res://assets/Rocky Roads/Rocky Roads/FX/splash.png" id="10_n7ghd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(23.5, 25)
@@ -296,19 +299,111 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b26j0"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_n7ghd"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(1.0348839, 0.79775286), 0.0, 0.0, 0, 0, Vector2(2, 1), -0.16910139, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nvl01"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n7ghd"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_b26j0"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nvl01"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_nvl01"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-234, 86)
 script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(250.25, 142.5)
 shape = SubResource("RectangleShape2D_hqtel")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(250, 140)
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_ieltc")
 animation = &"run"
 frame = 2
 frame_progress = 0.88714135
+
+[node name="Dust" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_b26j0")
+position = Vector2(1, 12)
+emitting = false
+amount = 10
+texture = ExtResource("8_dw050")
+direction = Vector2(0, -1)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 50.0
+angle_max = 720.0
+scale_amount_curve = SubResource("Curve_n7ghd")
+color_ramp = SubResource("Gradient_nvl01")
+anim_speed_min = 0.5
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -12.0
+offset_top = -25.0
+offset_right = 12.0
+offset_bottom = -14.0
+theme_override_font_sizes/font_size = 6
+
+[node name="DashSmoke" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_n7ghd")
+emitting = false
+amount = 4
+texture = ExtResource("9_b26j0")
+one_shot = true
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+linear_accel_min = 5.0
+linear_accel_max = 10.0
+color_ramp = SubResource("Gradient_b26j0")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="Land" type="CPUParticles2D" parent="."]
+z_index = 2
+material = SubResource("CanvasItemMaterial_nvl01")
+position = Vector2(0, 11)
+emitting = false
+amount = 1
+texture = ExtResource("10_n7ghd")
+lifetime = 0.2
+one_shot = true
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+linear_accel_min = 5.0
+linear_accel_max = 10.0
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_speed_curve = SubResource("Curve_nvl01")

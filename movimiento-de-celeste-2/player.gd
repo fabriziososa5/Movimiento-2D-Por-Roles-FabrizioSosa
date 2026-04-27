@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var dust_effect = $Dust
+@onready var dash_smoke = $DashSmoke
+@onready var land = $Land
 
 var speed = 200
 var acceleration = 700
@@ -22,9 +25,19 @@ var wall_slide_speed = 150
 var wall_jump_force = -500
 var wall_jump_push = 500
 
+var was_on_floor = false
+
+var did_double_jump = false
+
+
 func _physics_process(delta):
+	$Label.text = str(velocity.length())
 
 	var direction = Input.get_axis("left", "right")
+	var prev_on_floor = was_on_floor
+	var prev_velocity_y = velocity.y
+
+	dust()
 
 	if direction != 0:
 		animated_sprite.flip_h = direction < 0
@@ -58,6 +71,11 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("jump") and jumps_left > 0:
 		velocity.y = jump_force
+
+
+		if jumps_left == 1:
+			did_double_jump = true
+
 		jumps_left -= 1
 
 	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor():
@@ -84,12 +102,39 @@ func _physics_process(delta):
 		if dash_direction.x != 0:
 			animated_sprite.flip_h = dash_direction.x > 0
 
+		trigger_dash_smoke()
 
 	move_and_slide()
 
+	if is_on_floor() and not prev_on_floor:
+		if did_double_jump and prev_velocity_y > 50:
+			trigger_land()
+
+		did_double_jump = false
+
+	was_on_floor = is_on_floor()
+
+
+func trigger_land():
+	land.emitting = false
+	land.emitting = true
+
+
+func trigger_dash_smoke():
+	dash_smoke.position = Vector2.ZERO
+
+	if dash_direction.x > 0:
+		dash_smoke.direction = Vector2(-1, 0)
+		dash_smoke.position.x = -10
+	elif dash_direction.x < 0:
+		dash_smoke.direction = Vector2(1, 0)
+		dash_smoke.position.x = 10
+
+	dash_smoke.emitting = false
+	dash_smoke.emitting = true
+
 
 func update_animations():
-
 	if dash_timer > 0:
 		animated_sprite.play("dash")
 		return
@@ -108,3 +153,10 @@ func update_animations():
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("idle")
+
+
+func dust():
+	if velocity.length() > 100 and is_on_floor(): 
+		dust_effect.emitting = true
+	else:
+		dust_effect.emitting = false
