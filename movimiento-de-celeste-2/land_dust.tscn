@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://bktuyo7rh3rsq"]
+
+[ext_resource type="Texture2D" uid="uid://gacpsrrlontj" path="res://assets/Rocky Roads/Rocky Roads/FX/splash.png" id="1_dcib2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8scgn"]
+atlas = ExtResource("1_dcib2")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsov1"]
+atlas = ExtResource("1_dcib2")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvh1y"]
+atlas = ExtResource("1_dcib2")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylh7d"]
+atlas = ExtResource("1_dcib2")
+region = Rect2(144, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn4f3"]
+atlas = ExtResource("1_dcib2")
+region = Rect2(192, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ol2"]
+atlas = ExtResource("1_dcib2")
+region = Rect2(240, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbcwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8scgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsov1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvh1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylh7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn4f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ol2")
+}],
+"loop": true,
+"name": &"land_dust",
+"speed": 12.0
+}]
+
+[node name="land_dust" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vbcwo")
+animation = &"land_dust"

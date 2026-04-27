@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://v0oulwkv8flj"]
+
+[ext_resource type="Texture2D" uid="uid://dg4evw4n1xdj2" path="res://assets/Rocky Roads/Rocky Roads/FX/walk_dust.png" id="1_y6ycw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6qse"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alpkd"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8a0u"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdxwc"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqmda"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4ymy"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8iah"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag5hj"]
+atlas = ExtResource("1_y6ycw")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fp0ik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6qse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alpkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8a0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdxwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqmda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4ymy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8iah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag5hj")
+}],
+"loop": true,
+"name": &"run_dust",
+"speed": 12.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_fp0ik")
+animation = &"run_dust"
+frame_progress = 0.35559905

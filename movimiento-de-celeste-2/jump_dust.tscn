@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6xmdgamw0tld"]
+
+[ext_resource type="Texture2D" uid="uid://cyg6mjxdu0x5b" path="res://assets/Rocky Roads/Rocky Roads/FX/boing.png" id="1_mcmmc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlyn1"]
+atlas = ExtResource("1_mcmmc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fkim"]
+atlas = ExtResource("1_mcmmc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikm1r"]
+atlas = ExtResource("1_mcmmc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q102"]
+atlas = ExtResource("1_mcmmc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aow4p"]
+atlas = ExtResource("1_mcmmc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bavh5"]
+atlas = ExtResource("1_mcmmc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v18us"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlyn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fkim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikm1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q102")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aow4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bavh5")
+}],
+"loop": true,
+"name": &"jump_dust",
+"speed": 12.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_v18us")
+animation = &"jump_dust"
+frame = 2
+frame_progress = 0.5535084

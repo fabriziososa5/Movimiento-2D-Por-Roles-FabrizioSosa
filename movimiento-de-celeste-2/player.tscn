@@ -310,10 +310,5 @@ z_index = 1
 position = Vector2(250, 140)
 sprite_frames = SubResource("SpriteFrames_ieltc")
 animation = &"run"
-frame_progress = 0.15453531
-
-[node name="DashParticles" type="CPUParticles2D" parent="."]
-
-[node name="JumpParticles" type="CPUParticles2D" parent="."]
-
-[node name="LandParticles" type="CPUParticles2D" parent="."]
+frame = 2
+frame_progress = 0.88714135
