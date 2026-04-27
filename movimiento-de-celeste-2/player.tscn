@@ -344,8 +344,7 @@ shape = SubResource("RectangleShape2D_hqtel")
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_ieltc")
 animation = &"run"
-frame = 2
-frame_progress = 0.88714135
+frame_progress = 0.42887688
 
 [node name="Dust" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_b26j0")
@@ -353,6 +352,7 @@ position = Vector2(1, 12)
 emitting = false
 amount = 10
 texture = ExtResource("8_dw050")
+one_shot = true
 direction = Vector2(0, -1)
 spread = 15.0
 gravity = Vector2(0, 0)
@@ -391,7 +391,7 @@ anim_speed_max = 1.0
 [node name="Land" type="CPUParticles2D" parent="."]
 z_index = 2
 material = SubResource("CanvasItemMaterial_nvl01")
-position = Vector2(0, 11)
+position = Vector2(-1, 9)
 emitting = false
 amount = 1
 texture = ExtResource("10_n7ghd")
