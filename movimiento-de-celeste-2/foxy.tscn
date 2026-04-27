@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjj6j0bybjn21"]
+
+[ext_resource type="Texture2D" uid="uid://dr0ab0d7mqssp" path="res://assets/Fox Sprite Sheet.png" id="1_7xt5n"]
+[ext_resource type="Script" uid="uid://dqtpsg31kust0" path="res://Foxy.gd" id="2_aku5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhbat"]
+atlas = ExtResource("1_7xt5n")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r8n2"]
+atlas = ExtResource("1_7xt5n")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krsye"]
+atlas = ExtResource("1_7xt5n")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an1my"]
+atlas = ExtResource("1_7xt5n")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raenv"]
+atlas = ExtResource("1_7xt5n")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr52d"]
+atlas = ExtResource("1_7xt5n")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6ad6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhbat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r8n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krsye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an1my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raenv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr52d")
+}],
+"loop": true,
+"name": &"descansar",
+"speed": 5.0
+}]
+
+[node name="Foxy" type="Node2D"]
+
+[node name="Foxy1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a6ad6")
+animation = &"descansar"
+frame_progress = 0.002103342
+script = ExtResource("2_aku5n")

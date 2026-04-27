@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu5k6xa8xmhan"]
+[gd_scene load_steps=7 format=3 uid="uid://bu5k6xa8xmhan"]
 
 [ext_resource type="Texture2D" uid="uid://bd2qa3ikgayms" path="res://BackGround.png" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://xuiu1i4kumpo" path="res://player.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://c371cph12kxe8" path="res://Floor.tscn" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cpfefy8li7p" path="res://snow.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://cjj6j0bybjn21" path="res://foxy.tscn" id="5_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://15jetumtygiy" path="res://fogata.tscn" id="6_lgr22"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BackGround" type="Sprite2D" parent="."]
 position = Vector2(238, 114.5)
 scale = Vector2(0.12864584, 0.10879631)
 texture = ExtResource("1_r0du0")
@@ -20,3 +22,9 @@ position = Vector2(0, 2)
 
 [node name="Snow" parent="." instance=ExtResource("4_cm0pq")]
 position = Vector2(-5, -1)
+
+[node name="Fogata" parent="." instance=ExtResource("6_lgr22")]
+position = Vector2(340, 217)
+
+[node name="Foxy" parent="." instance=ExtResource("5_3dxm6")]
+position = Vector2(362, 210)

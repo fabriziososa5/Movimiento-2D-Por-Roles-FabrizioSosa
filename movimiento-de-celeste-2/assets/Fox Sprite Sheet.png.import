@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhe7sfl26uago"
-path="res://.godot/imported/W401-8.png-9d276c0d2229bbe6d5599cc035d4c104.ctex"
+uid="uid://dr0ab0d7mqssp"
+path="res://.godot/imported/Fox Sprite Sheet.png-d9301f81c1dd1456ea860a216f808b0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/W401-8.png"
-dest_files=["res://.godot/imported/W401-8.png-9d276c0d2229bbe6d5599cc035d4c104.ctex"]
+source_file="res://assets/Fox Sprite Sheet.png"
+dest_files=["res://.godot/imported/Fox Sprite Sheet.png-d9301f81c1dd1456ea860a216f808b0b.ctex"]
 
 [params]
 

@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var dash_smoke = $DashSmoke
 @onready var land = $Land
 
+
 var speed = 200
 var acceleration = 700
 var friction = 1000

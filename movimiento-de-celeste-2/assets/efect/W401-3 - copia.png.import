@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1h8yyb81w7h1"
-path="res://.godot/imported/W401-14.png-9632e9f9462558bbb20b91db737d692c.ctex"
+uid="uid://bi7w8fbo7wrk4"
+path="res://.godot/imported/W401-3 - copia.png-f926e6f8dd2ec1a25a7684641a21702b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/W401-14.png"
-dest_files=["res://.godot/imported/W401-14.png-9632e9f9462558bbb20b91db737d692c.ctex"]
+source_file="res://assets/efect/W401-3 - copia.png"
+dest_files=["res://.godot/imported/W401-3 - copia.png-f926e6f8dd2ec1a25a7684641a21702b.ctex"]
 
 [params]
 
